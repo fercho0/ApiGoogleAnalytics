@@ -37,12 +37,19 @@
             ],
             metrics: [
               {
+                alias: 'Users',
+                expression: 'ga:usersUsers',
+                formattingType: 'INTEGER'
+              },
+              {
                 alias:'sessions',
-                expression:'ga:sessions'
+                expression:'ga:sessions',
+                formattingType: "INTEGER"
               },
               {
                 alias: 'duration',
-                expression: 'ga:sessionDuration'
+                expression: 'ga:sessionDuration',
+                formattingType: 'TIME'
               }
             ],
             dimensions: [
@@ -57,6 +64,7 @@
 
   function displayResults(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
+    console.log(formattedJson);
     document.getElementById('query-output').value = formattedJson;
   }
 
