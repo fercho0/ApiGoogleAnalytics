@@ -32,9 +32,14 @@
                 endDate: 'today'
               }
             ],
+            dimensions:[
+            {
+            name:"ga:sessionCount",
+            }],
             metrics: [
               {
-                expression: 'ga:sessions'
+                expression: 'ga:sessionDuration',
+                ga:users
               }
             ]
           }
