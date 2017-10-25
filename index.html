@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Prueba LOCAL</title>
+  <meta name="google-signin-client_id" content="606716073186-kktttn5rqo62t43hji3vlsvcvc678qbr.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+</head>
+<body>
+
+<h1>Prueba LOCAL</h1>
+
+<p class="g-signin2" data-onsuccess="queryReports"></p>
+
+<textarea cols="80" rows="20" id="query-output"></textarea>
+
+<script>
+  var VIEW_ID = '163132989';
+
+  function queryReports() {
+    gapi.client.request({
+      path: '/v4/reports:batchGet',
+      root: 'https://analyticsreporting.googleapis.com/',
+      method: 'POST',
+      body: {
+        reportRequests: [
+          {
+            viewId: VIEW_ID,
+            dateRanges: [
+              {
+                startDate: '7daysAgo',
+                endDate: 'today'
+              }
+            ],
+            metrics: [
+              {
+                expression: 'ga:sessions'
+              }
+            ]
+          }
+        ]
+      }
+    }).then(displayResults, console.error.bind(console));
+  }
+
+  function displayResults(response) {
+    var formattedJson = JSON.stringify(response.result, null, 2);
+    document.getElementById('query-output').value = formattedJson;
+  }
+
+</script>
+<script src="https://apis.google.com/js/client:platform.js"></script>
+
+
+<br>
+<center>        <h1>INICIO</h1>         <ul>            <li><a
+href="index.html">INICIO</a></li>               <li><a href="uno.html">UNO</a></li>             <li><a href="dos.html">DOS</a></li>             <li><a
+href="tres.html">TRES</a></li>  </ul>  </center>
+
+</body>
+</html>
+
