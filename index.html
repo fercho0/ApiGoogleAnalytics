@@ -44,6 +44,24 @@
             dimensions: [
             {
               name: "ga:browser"
+            }],
+            pivots:[
+            {
+              dimensions:[
+              {
+                name:"ga:userAgeBracket"
+              }],
+              startGroup:"0",
+              maxGroupCount:"3",
+              metrics:[
+              {
+                alias:"sessions",
+                expression:"ga:sessions"
+              },
+              {
+                alias:"pageviews",
+                expression:"ga:pageviews"
+              }]
             }]
           }
         ]
