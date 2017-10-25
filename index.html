@@ -16,8 +16,11 @@
 
 <script>
   var VIEW_ID = '163132989';
+/*
+'dimensions': 'ga:date',
+      'metrics': 'ga:sessions',
 
-  function queryReports() {
+*/  function queryReports() {
     gapi.client.request({
       path: '/v4/reports:batchGet',
       root: 'https://analyticsreporting.googleapis.com/',
@@ -34,9 +37,14 @@
             ],
             metrics: [
               {
-                expression: 'ga:users',
+                expression:'ga:sessions',
+                alias:'sessions'
               }
-            ]
+            ],
+            dimensions: [
+            {
+              name: "ga:browser"
+            }]
           }
         ]
       }
