@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style type="text/css">
+
+.cuerpo {
+                width: 100px;
+                height: 100px;
+                background: red;
+                -webkit-box-shadow: -4px 4px 11px 4px rgba(52,152,219,1);
+-moz-box-shadow: -4px 4px 11px 4px rgba(52,152,219,1);
+box-shadow: -4px 4px 11px 4px rgba(52,152,219,1);
+            }
+           
+            
+         .lado-derecha-arriba:before {
+		  content: "";
+		  position: absolute;
+		  top: 0;
+		  left: 100px;
+		  width: 0;
+		  height: 0;
+		  border-width: 50px;
+		  border-style: solid;
+		  border-color:  transparent transparent transparent red;
+            }
+
+
+</style>
+
+<div class="cuerpo lado-derecha-arriba">
+	Hola Mundo <p>kjsjksd</p>
+</div>
+</body>
+</html>
+
+
