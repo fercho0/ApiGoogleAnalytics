@@ -10,14 +10,19 @@
 						}
 
 			enviarSeguimientoPagina("UNO","fernando1");  
-			ga('create', 'UA-108507917-1', 'auto', 'myTracker');
+			//ga('create', 'UA-108507917-1', 'auto', 'myTracker');
 
-
+			ga('create', {
+			  trackingId: 'UA-108507917-1',
+			  cookieDomain: 'auto',
+			  name: 'myTracker',
+			  userId: '12345'
+			});
 			
-ga(function() {
-  // Logs the "myTracker" tracker object to the console.
-  console.log(ga.getByName('myTracker'));
-});
+			ga(function() {
+			  // Logs the "myTracker" tracker object to the console.
+			  console.log(ga.getByName('myTracker'));
+			});
 		</script>   
 		<title>UNO</title> 
 	</head> 
