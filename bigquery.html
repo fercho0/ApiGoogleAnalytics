@@ -36,8 +36,12 @@
           /*
           'query': 'SELECT TOP(repository_language, 5) as language, COUNT(*) as count FROM [publicdata:samples.github_timeline] WHERE repository_language != "";'*/
         });
-        request.execute(function(response) {     
+        request.execute(function(response) { 
+
+            console.log("---------------------------------------------------------------------------");    
             console.log(response);
+            console.log("---------------------------------------------------------------------------");    
+            
             $('#result_box').html(JSON.stringify(response.result.rows, null));
         });
       }
