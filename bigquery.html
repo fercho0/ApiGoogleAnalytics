@@ -32,7 +32,7 @@
        var request = gapi.client.bigquery.jobs.query({
           'projectId': project_id,
           'timeoutMs': '30000',
-          'query': 'SELECT SUM(totals.pageviews) as TotalPageviews FROM [google.com:analytics-bigquery:LondonCycleHelmet.ga_sessions_20130910]'
+          'query': 'SELECT SUM(id) as total FROM [gnpbigquery:hola.tbla]'
           /*
           'query': 'SELECT TOP(repository_language, 5) as language, COUNT(*) as count FROM [publicdata:samples.github_timeline] WHERE repository_language != "";'*/
         });
@@ -41,7 +41,7 @@
             console.log("---------------------------------------------------------------------------");    
             console.log(response);
             console.log("---------------------------------------------------------------------------");    
-            
+
             $('#result_box').html(JSON.stringify(response.result.rows, null));
         });
       }
