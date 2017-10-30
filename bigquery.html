@@ -4,7 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
       // User Submitted Variables
-      var project_id = '163240274';
+      var project_id = 'google.com:analytics-bigquery';
       var client_id = '606716073186-kktttn5rqo62t43hji3vlsvcvc678qbr.apps.googleusercontent.com';
 
       var config = {
@@ -32,7 +32,10 @@
        var request = gapi.client.bigquery.jobs.query({
           'projectId': project_id,
           'timeoutMs': '30000',
-          'query': 'SELECT TOP(repository_language, 5) as language, COUNT(*) as count FROM [publicdata:samples.github_timeline] WHERE repository_language != "";'
+          //'query': 'SELECT TOP(repository_language, 5) as language, COUNT(*) as count FROM [publicdata:samples.github_timeline] WHERE repository_language != "";'
+          'query': 'SELECT SUM(totals.pageviews) as TotalPageviews FROM [google.com:analytics-bigquery:LondonCycleHelmet.ga_sessions_20130910]'
+
+
         });
         request.execute(function(response) {     
             console.log(response);
